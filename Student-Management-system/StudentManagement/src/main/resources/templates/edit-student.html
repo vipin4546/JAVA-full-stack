@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Student</title>
+</head>
+<body>
+
+<h1>Edit Student</h1>
+
+<form action="/update" method="post">
+
+    <input
+            type="hidden"
+            name="id"
+            th:value="${student.id}">
+
+    <input
+            type="text"
+            name="name"
+            th:value="${student.name}"
+            placeholder="Enter Name">
+
+    <input
+            type="text"
+            name="studentClass"
+            th:value="${student.studentClass}"
+            placeholder="Enter Class">
+
+    <input
+            type="number"
+            name="rollNumber"
+            th:value="${student.rollNumber}"
+            placeholder="Enter Roll Number">
+
+    <button type="submit">
+        Update Student
+    </button>
+
+</form>
+
+</body>
+</html>

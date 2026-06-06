@@ -49,4 +49,26 @@ public class StudentController {
         return "redirect:/student";
     }
 
+    @GetMapping("/edit")
+    public String editStudent(@RequestParam Long id, Model model) {
+        Student student =
+                studentService.getStudentById(id);
+        model.addAttribute("student", student);
+        return "edit-student";
+    }
+
+    @PostMapping("/update")
+    public String updateStudent(@RequestParam Long id,
+                                @RequestParam String name,
+                                @RequestParam String studentClass,
+                                @RequestParam Integer rollNumber) {
+        Student student =
+                studentService.getStudentById(id);
+        student.setName(name);
+        student.setStudentClass(studentClass);
+        student.setRollNumber(rollNumber);
+        studentService.saveStudent(student);
+        return "redirect:/student";
+    }
+
 }
