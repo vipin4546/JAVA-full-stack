@@ -3,9 +3,12 @@ package com.vipin.StudentManagement.controller;
 import com.vipin.StudentManagement.entity.Student;
 import com.vipin.StudentManagement.service.StudentService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class StudentController {
@@ -16,7 +19,11 @@ public class StudentController {
     }
 
     @GetMapping("/student")
-    public String studentPage() {
+    public String studentPage(Model model) {
+        List<Student> students = studentService.getAllStudents();
+        model.addAttribute("students", students);
+
+
         return "student";
     }
 
@@ -34,6 +41,12 @@ public class StudentController {
         studentService.saveStudent(student);
         return "redirect:/student";
 
+    }
+
+    @GetMapping("/delete")
+    public String deleteStudent(@RequestParam Long id) {
+        studentService.deleteStudent(id);
+        return "redirect:/student";
     }
 
 }
