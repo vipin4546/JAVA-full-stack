@@ -1,0 +1,93 @@
+# ========================================
+# Java / Spring Boot
+# ========================================
+target/
+build/
+out/
+bin/
+
+*.class
+*.jar
+*.war
+*.ear
+
+# ========================================
+# Maven
+# ========================================
+.mvn/wrapper/maven-wrapper.jar
+
+# ========================================
+# Gradle
+# ========================================
+.gradle/
+
+# ========================================
+# IntelliJ IDEA
+# ========================================
+.idea/
+*.iml
+
+# ========================================
+# VS Code
+# ========================================
+.vscode/
+
+# ========================================
+# Eclipse / STS
+# ========================================
+.project
+.classpath
+.settings/
+.springBeans
+.sts4-cache/
+
+# ========================================
+# Operating System Files
+# ========================================
+.DS_Store
+Thumbs.db
+
+# ========================================
+# Logs
+# ========================================
+logs/
+*.log
+
+# ========================================
+# Environment Files
+# ========================================
+.env
+.env.*
+*.env
+
+# ========================================
+# Spring Boot Configuration
+# ========================================
+**/application.properties
+**/application.yml
+**/application.yaml
+
+**/application-dev.properties
+**/application-prod.properties
+**/application-local.properties
+
+**/application-dev.yml
+**/application-prod.yml
+**/application-local.yml
+
+# ========================================
+# Secrets / Credentials
+# ========================================
+secrets/
+credentials/
+*.key
+*.pem
+*.jks
+*.p12
+
+# ========================================
+# Generated Files
+# ========================================
+generated/
+tmp/
+temp/
